@@ -46,11 +46,6 @@ class MainActivity : AppCompatActivity() {
                 runOnUiThread {
                     que.text="님들 그거 앎?"+naver.que
                     answer.text=naver.answer+"임 엌ㅋㅋ"
-                    btn.setOnClickListener {
-
-                        if(answer.text.toString()==naver.answer) Toast.makeText(applicationContext, "정답입니다.", Toast.LENGTH_SHORT).show()
-                        else Toast.makeText(applicationContext, "정답이 아닙니다. 정답은"+naver.answer+"입니다.", Toast.LENGTH_SHORT).show()
-                    }
                 }
             }
 
