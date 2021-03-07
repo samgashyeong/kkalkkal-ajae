@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:outlineAmbientShadowColor="@color/black">
+
+        <TextView
+            android:id="@+id/que"
+            android:layout_width="278dp"
+            android:layout_height="wrap_content"
+            android:text="QUE"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/answer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="answer"
+            android:textColorHint="#fff"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/TodayAzeo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="오늘의 아재개그보러가기"
+        android:layout_marginTop="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <Button
+        android:id="@+id/QuizAzeo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="아재개그 맞추러가보기!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TodayAzeo"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
