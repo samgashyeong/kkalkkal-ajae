@@ -21,38 +21,62 @@
             android:id="@+id/que"
             android:layout_width="278dp"
             android:layout_height="wrap_content"
-            android:text="QUE"
-            android:textSize="20sp" />
+            android:text="질문"
+            android:textColor="#000"
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/answer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="answer"
+            android:text="답"
+            android:textColor="#000"
             android:textColorHint="#fff"
-            android:textSize="20sp"
+            android:textSize="15sp"
             app:layout_constraintBottom_toTopOf="@+id/btn" />
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="259dp"
+        android:layout_height="253dp"
+        android:src="@drawable/picture"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="240dp"
+        android:layout_height="189dp"
+        android:src="@drawable/picture2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TodayAzeo"
+        android:layout_marginBottom="150dp"/>
+
 
     <Button
         android:id="@+id/TodayAzeo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="오늘의 아재개그보러가기"
-        android:layout_marginTop="70dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        android:backgroundTint="#000"/>
 
     <Button
         android:id="@+id/QuizAzeo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="아재개그 맞추러가보기!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="아재개그 맞추러 가보기!"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TodayAzeo"/>
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        android:backgroundTint="#000"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

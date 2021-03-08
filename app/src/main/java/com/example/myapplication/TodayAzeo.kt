@@ -1,35 +1,22 @@
 package com.example.myapplication
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.telecom.Call
-import android.widget.Toast
 import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_today_azeo.*
 import okhttp3.Callback
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.Response
 import java.io.IOException
 
-class MainActivity : AppCompatActivity() {
+class TodayAzeo : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
+        setContentView(R.layout.activity_today_azeo)
 
         getApi()
-
-        TodayAzeo.setOnClickListener {
-            val intent = Intent(this, com.example.myapplication.TodayAzeo::class.java)
-            startActivity(intent)
-        }
-
-        QuizAzeo.setOnClickListener {
-            val Intent = Intent(this,com.example.myapplication.QuizAzeo::class.java)
-            startActivity(Intent)
-        }
     }
 
     fun getApi(){
@@ -55,8 +42,8 @@ class MainActivity : AppCompatActivity() {
 
 
                 runOnUiThread {
-                    que.text="님들 그거 앎?"+naver.que
-                    answer.text=naver.answer+"임 엌ㅋㅋ"
+                    TAque.text=naver.que
+                    TAanswer.text=naver.answer+" 엌ㅋㅋㅋㅋ"
                 }
             }
 

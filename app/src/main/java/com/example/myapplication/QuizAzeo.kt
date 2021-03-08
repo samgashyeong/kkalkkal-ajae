@@ -1,35 +1,23 @@
 package com.example.myapplication
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.telecom.Call
-import android.widget.Toast
 import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_quiz_azeo.*
+import kotlinx.android.synthetic.main.activity_today_azeo.*
 import okhttp3.Callback
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.Response
 import java.io.IOException
 
-class MainActivity : AppCompatActivity() {
+class QuizAzeo : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
+        setContentView(R.layout.activity_quiz_azeo)
 
         getApi()
-
-        TodayAzeo.setOnClickListener {
-            val intent = Intent(this, com.example.myapplication.TodayAzeo::class.java)
-            startActivity(intent)
-        }
-
-        QuizAzeo.setOnClickListener {
-            val Intent = Intent(this,com.example.myapplication.QuizAzeo::class.java)
-            startActivity(Intent)
-        }
     }
 
     fun getApi(){
@@ -55,8 +43,12 @@ class MainActivity : AppCompatActivity() {
 
 
                 runOnUiThread {
-                    que.text="님들 그거 앎?"+naver.que
-                    answer.text=naver.answer+"임 엌ㅋㅋ"
+                    QAque.text=naver.que
+                    answerBtn.setOnClickListener {
+                        if(naver.answer==QAanswer.text.toString()) sucuss.text="정답입니다!"
+                        else if(QAanswer.text.toString()==null) sucuss.text="답을 적어주세요"
+                        else sucuss.text="정답이 아닙니다. 정답은 "+naver.answer+"입니다."
+                    }
                 }
             }
 
