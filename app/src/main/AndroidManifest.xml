@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".QuizAzeo"></activity>
+        <activity android:name=".QuizAzeo"
+            android:windowSoftInputMode="adjustResize"></activity>
         <activity android:name=".TodayAzeo" />
         <activity android:name=".MainActivity">
             <intent-filter>

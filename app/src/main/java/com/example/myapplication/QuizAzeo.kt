@@ -2,6 +2,8 @@ package com.example.myapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_quiz_azeo.*
@@ -32,7 +34,7 @@ class QuizAzeo : AppCompatActivity() {
 
         client.newCall(request).enqueue(object: Callback {
             override fun onFailure(call: okhttp3.Call, e: IOException) {
-                println("로딩실패 개새끼")
+                println("로딩실패")
             }
 
             override fun onResponse(call: okhttp3.Call, response: Response) {
@@ -45,19 +47,21 @@ class QuizAzeo : AppCompatActivity() {
                 runOnUiThread {
                     QAque.text=naver.que
                     answerBtn.setOnClickListener {
+                        Log.d("asdff", "onResponse: ${naver.que} ${naver.answer}")
                         if(naver.answer==QAanswer.text.toString()) sucuss.text="정답입니다!"
-                        else if(QAanswer.text.toString()==null) sucuss.text="답을 적어주세요"
-                        else sucuss.text="정답이 아닙니다. 정답은 "+naver.answer+"입니다."
+                        else if(QAanswer.text.toString()==null) Toast.makeText(
+                            this@QuizAzeo,
+                            "정답을 적어주세요.",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        else sucuss.text="정답이 아닌데~ ㅋㅋ 정답은 "+naver.answer+" ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ"
+                        Log.d("ㅁㄴㅇㄹ", "onResponse: 클릭됨")
                     }
                 }
             }
-
         })
     }
 
-    fun setText(data : MainActivity.azeo){
-        que.text=data.que
-    }
 
     data class azeo(val que: String, val answer:String)
 }

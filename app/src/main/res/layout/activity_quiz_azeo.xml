@@ -34,28 +34,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/QAque"/>
 
+
     <Button
         android:id="@+id/answerBtn"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#000"
+        android:gravity="center"
         android:text="답 확인해보기"
-        android:backgroundTint="#000"
+        android:textColor="#fff"
+        android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/QAanswer" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+
 
     <TextView
         android:id="@+id/sucuss"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:textSize="20sp"
+        android:textColor="#000"
+        android:textSize="30sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/answerBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/answerBtn"
-        android:gravity="center"
-        android:textColor="#000"/>
-
+        app:layout_constraintTop_toBottomOf="@+id/QAanswer" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
